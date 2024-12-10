@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  final String _apiUrl ="https://xffzdzh0.brs.devtunnels.ms:8000/users"; //usar el link generado por devtunnels, DEBE PERMITIR ANONIMOS
+  final String _apiUrl ="https://412bnmkw.brs.devtunnels.ms:8000/users"; //usar el link generado por devtunnels, DEBE PERMITIR ANONIMOS
 
   Future<http.Response> getByEmail(String email) async {
     final response = await http.post(
@@ -23,7 +23,7 @@ class ApiService {
     return response;
   }
 
-  Future<int> registerUser(
+  Future<http.Response> registerUser(
       String firstName, String lastName, String email, String password) async {
     final response = await http.post(
       Uri.parse("$_apiUrl/register"),
@@ -35,7 +35,7 @@ class ApiService {
         'psw': password
       }),
     );
-    return response.statusCode;
+    return response;
   }
 
   Future<String> sendPhoneCode(String phone) async {
@@ -83,6 +83,16 @@ class ApiService {
         'email': email,
         'phone': phone,
       }),
+    );
+
+    return response;
+  }
+
+  Future<http.Response> getUserById(int? id) async {
+    final response = await http.post(
+      Uri.parse("$_apiUrl/getUserById"),
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({'id': id}),
     );
 
     return response;

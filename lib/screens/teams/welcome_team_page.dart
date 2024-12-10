@@ -18,7 +18,7 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
         backgroundColor: Colors.white,
         body: Padding(
             padding: EdgeInsets.fromLTRB(
-                screenWidth * 0.06, screenHeight * 0.03, screenWidth * 0.06, 0),
+                screenWidth * 0.06, screenHeight * 0.03, screenWidth * 0.06, 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -30,7 +30,7 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                       fontWeight: FontWeight.w500,
                       color: Colors.black),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Row(
@@ -40,12 +40,12 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                         padding: EdgeInsets.fromLTRB(
                             screenWidth * 0.06,
                             screenHeight * 0.04,
-                            screenHeight * 0.04,
-                            screenWidth * 0.05),
-                        decoration: BoxDecoration(
-                            color: Color(0xffBDB76C),
+                            screenWidth * 0.08,
+                            screenHeight * 0.025),
+                        decoration: const BoxDecoration(
+                            color: Color(0xff517b5b),
                             borderRadius: BorderRadius.all(Radius.circular(6))),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
@@ -74,17 +74,17 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                             ),
                           ],
                         )),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                     Container(
                         padding: EdgeInsets.fromLTRB(
                             screenWidth * 0.06,
                             screenHeight * 0.04,
-                            screenHeight * 0.16,
-                            screenWidth * 0.05),
-                        decoration: BoxDecoration(
-                            color: Color(0xffBDB76C),
+                            screenWidth * 0.32,
+                            screenHeight * 0.025),
+                        decoration: const BoxDecoration(
+                            color: Color(0xff517b5b),
                             borderRadius: BorderRadius.all(Radius.circular(6))),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
@@ -115,7 +115,7 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                         ))
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Row(
@@ -126,7 +126,7 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MembersPage()
+                              builder: (context) => const MembersPage()
                           )
                         );
                       },
@@ -134,13 +134,13 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                           padding: EdgeInsets.fromLTRB(
                               screenWidth * 0.06,
                               screenHeight * 0.04,
-                              screenHeight * 0.13,
-                              screenWidth * 0.05),
-                          decoration: BoxDecoration(
-                              color: Color(0xffBDB76C),
+                              screenWidth * 0.13,
+                              screenHeight * 0.025),
+                          decoration: const BoxDecoration(
+                              color: Color(0xff517b5b),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(6))),
-                          child: Column(
+                          child: const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
@@ -170,17 +170,17 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                             ],
                           )),
                     ),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                     Container(
                         padding: EdgeInsets.fromLTRB(
                             screenWidth * 0.06,
                             screenHeight * 0.04,
-                            screenHeight * 0.06,
-                            screenWidth * 0.05),
-                        decoration: BoxDecoration(
-                            color: Color(0xffBDB76C),
+                            screenWidth * 0.247,
+                            screenHeight * 0.025),
+                        decoration: const BoxDecoration(
+                            color: Color(0xff517b5b),
                             borderRadius: BorderRadius.all(Radius.circular(6))),
-                        child: Column(
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
@@ -211,10 +211,10 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                         ))
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   "Resumen para NombreEquipo",
                   style: TextStyle(
                       fontFamily: "DMSans",
@@ -222,16 +222,16 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                       fontWeight: FontWeight.w400,
                       color: Colors.black),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Container(
+                Expanded(child: Container(
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: Color(0xffF7F3BC),
+                        color: const Color(0xffF7F3BC),
                         width: 1,
                       ),
-                      borderRadius: BorderRadius.all(Radius.circular(6)),
+                      borderRadius: const BorderRadius.all(Radius.circular(6)),
                       color: Colors.white,
                     ),
                     child: SizedBox(
@@ -247,14 +247,14 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                                 child: Row(
                                   children: [
                                     Container(
-                                      padding: EdgeInsets.symmetric(
+                                      padding: const EdgeInsets.symmetric(
                                           horizontal: 10, vertical: 4),
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(6)),
                                         color: Color(0xffe3e5e9),
                                       ),
-                                      child: Text(
+                                      child: const Text(
                                         "Tarea",
                                         style: TextStyle(
                                             fontFamily: "DMSans",
@@ -263,12 +263,12 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                                             color: Colors.black),
                                       ),
                                     ),
-                                    Spacer(),
-                                    Icon(Icons.cleaning_services_rounded),
-                                    SizedBox(
+                                    const Spacer(),
+                                    const Icon(Icons.cleaning_services_rounded),
+                                    const SizedBox(
                                       width: 25,
                                     ),
-                                    Text(
+                                    const Text(
                                       "Acomodar",
                                       style: TextStyle(
                                           fontFamily: "DMSans",
@@ -278,8 +278,8 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                                     ),
                                   ],
                                 )),
-                            Padding(
-                                padding: const EdgeInsets.only(
+                            const Padding(
+                                padding: EdgeInsets.only(
                                     bottom: 20, left: 20, right: 20),
                                 child: Row(
                                   children: [
@@ -321,14 +321,14 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                                 child: Row(
                                   children: [
                                     Container(
-                                      padding: EdgeInsets.symmetric(
+                                      padding: const EdgeInsets.symmetric(
                                           horizontal: 10, vertical: 4),
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(6)),
                                         color: Color(0xffe3e5e9),
                                       ),
-                                      child: Text(
+                                      child: const Text(
                                         "Capacitacion",
                                         style: TextStyle(
                                             fontFamily: "DMSans",
@@ -337,12 +337,12 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                                             color: Colors.black),
                                       ),
                                     ),
-                                    Spacer(),
-                                    Icon(Icons.book_online),
-                                    SizedBox(
+                                    const Spacer(),
+                                    const Icon(Icons.book_online),
+                                    const SizedBox(
                                       width: 25,
                                     ),
-                                    Text(
+                                    const Text(
                                       "Fisica",
                                       style: TextStyle(
                                           fontFamily: "DMSans",
@@ -352,8 +352,8 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                                     ),
                                   ],
                                 )),
-                            Padding(
-                                padding: const EdgeInsets.only(
+                            const Padding(
+                                padding: EdgeInsets.only(
                                     bottom: 20, left: 20, right: 20),
                                 child: Row(
                                   children: [
@@ -395,14 +395,14 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                                 child: Row(
                                   children: [
                                     Container(
-                                      padding: EdgeInsets.symmetric(
+                                      padding: const EdgeInsets.symmetric(
                                           horizontal: 10, vertical: 4),
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(6)),
                                         color: Color(0xffe3e5e9),
                                       ),
-                                      child: Text(
+                                      child: const Text(
                                         "Incendio",
                                         style: TextStyle(
                                             fontFamily: "DMSans",
@@ -411,12 +411,12 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                                             color: Colors.black),
                                       ),
                                     ),
-                                    Spacer(),
-                                    Icon(Icons.fireplace_sharp),
-                                    SizedBox(
+                                    const Spacer(),
+                                    const Icon(Icons.fireplace_sharp),
+                                    const SizedBox(
                                       width: 25,
                                     ),
-                                    Text(
+                                    const Text(
                                       "Prioritario",
                                       style: TextStyle(
                                           fontFamily: "DMSans",
@@ -426,8 +426,8 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                                     ),
                                   ],
                                 )),
-                            Padding(
-                                padding: const EdgeInsets.only(
+                            const Padding(
+                                padding: EdgeInsets.only(
                                     bottom: 20, left: 20, right: 20),
                                 child: Row(
                                   children: [
@@ -461,7 +461,7 @@ class _WelcomeTeamPage extends State<WelcomeTeamPage> {
                                   ],
                                 )),
                           ],
-                        ))))
+                        )))))
               ],
             )),
       ),

@@ -1,9 +1,12 @@
 // ignore_for_file: use_build_context_synchronously, unused_field
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:scarlet_app/data/user_services.dart';
 import 'package:scarlet_app/widgets/navbar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterNumberPage extends StatefulWidget {
   final String phone;
@@ -17,6 +20,7 @@ class _RegisterNumberPageState extends State<RegisterNumberPage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   final ApiService apiService = ApiService();
 
   Widget _errorNameMessage = const Visibility(
@@ -285,6 +289,10 @@ class _RegisterNumberPageState extends State<RegisterNumberPage> {
                               emailController.text,
                               widget.phone);
                           if (response.statusCode == 200) {
+                            final prefs = await _prefs;
+                            Map<String, dynamic> responseBody = jsonDecode(response.body);
+                            await prefs.setInt(
+                                'id', responseBody['id']);
                             Navigator.push(
                               context,
                               MaterialPageRoute(

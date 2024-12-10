@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scarlet_app/screens/maps/realtime_page.dart';
+import 'package:scarlet_app/screens/maps/pastfires_page.dart';
 import 'package:scarlet_app/screens/teams/welcome_team_page.dart';
+import 'package:scarlet_app/screens/user/profile_page.dart';
 
 class NavBar extends StatefulWidget {
   final int initialIndex;
@@ -32,13 +34,13 @@ class _NavBarState extends State<NavBar> {
         const RealTimePage(),
       ],
       [
-        const RealTimePage(),
+        const PastFiresPage(),
       ],
       [
         const WelcomeTeamPage(),
       ],
       [
-        const RealTimePage(),
+        const ProfilePage(),
       ],
     ];
     return Scaffold(

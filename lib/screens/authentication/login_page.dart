@@ -1,11 +1,14 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:scarlet_app/data/user_services.dart';
 import 'package:scarlet_app/screens/authentication/confirm_number_page.dart';
 import 'package:scarlet_app/screens/authentication/register_page.dart';
 import 'package:scarlet_app/widgets/navbar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Country {
   final String name;
@@ -36,6 +39,7 @@ class _LoginPageState extends State<LoginPage>
   TextEditingController emailController = TextEditingController();
   TextEditingController numberController = TextEditingController();
   TextEditingController codeController = TextEditingController();
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   final ApiService apiService = ApiService();
 
@@ -284,10 +288,15 @@ class _LoginPageState extends State<LoginPage>
       body: Stack(
         children: <Widget>[
           ListView(
-            padding: const EdgeInsets.fromLTRB(50, 40, 50, 0),
+            padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
             children: <Widget>[
               Column(
                 children: [
+                  Image.asset(
+                    "assets/img/logos/wildfire-logo.png",
+                    width: 313,
+                    height: 350,
+                  ),
                   emailLogin,
                   numberLogin,
                   const Padding(padding: EdgeInsets.all(3)),
@@ -338,10 +347,19 @@ class _LoginPageState extends State<LoginPage>
                                       emailController.text,
                                       passwordController.text);
                                   if (loginResult.statusCode == 200) {
+                                    final prefs = await _prefs;
+                                    if(loginResult.body.isNotEmpty) {
+                                      Map<String, dynamic> responseBody =
+                                        jsonDecode(loginResult.body);
+                                      await prefs.setInt(
+                                          'id', responseBody['id']);
+                                    }
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const NavBar(initialIndex: 2,),
+                                        builder: (context) => const NavBar(
+                                          initialIndex: 2,
+                                        ),
                                       ),
                                     );
                                   } else {

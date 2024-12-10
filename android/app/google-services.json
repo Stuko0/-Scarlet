@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "10302514103",
+    "firebase_url": "https://scarlet-419401-default-rtdb.firebaseio.com",
+    "project_id": "scarlet-419401",
+    "storage_bucket": "scarlet-419401.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10302514103:android:73974b7324ff6ff90cbe32",
+        "android_client_info": {
+          "package_name": "com.example.scarlet_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "10302514103-dcpdm5kh9440vd0gbm2iffhk75949rpq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWvhyn1oJYFCdyWOfaXCFY842_bcp5Tlw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "10302514103-dcpdm5kh9440vd0gbm2iffhk75949rpq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

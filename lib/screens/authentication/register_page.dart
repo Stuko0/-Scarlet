@@ -1,10 +1,13 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'dart:convert';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:scarlet_app/data/user_services.dart';
 import 'package:scarlet_app/widgets/navbar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterPage extends StatefulWidget {
   final String? newEmail;
@@ -24,6 +27,7 @@ class _RegisterPageState extends State<RegisterPage> {
   late TextEditingController emailController;
   TextEditingController usuarioController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   final ApiService apiService = ApiService();
 
@@ -753,7 +757,11 @@ class _RegisterPageState extends State<RegisterPage> {
                               lastNameController.text,
                               emailController.text,
                               passwordController.text);
-                          if (result == 200) {
+                          if (result.statusCode == 200) {
+                            final prefs = await _prefs;
+                            Map<String, dynamic> responseBody = jsonDecode(result.body);
+                            await prefs.setInt(
+                                'id', responseBody['id']);
                             Navigator.push(
                               context,
                               MaterialPageRoute(
